@@ -5,3 +5,10 @@
 3. display account info
 4. exit via a menu
 5. all data is stored in memory - no external files or db
+
+maven guide
+- mvn compile
+- mvn test
+- mvn exec:java "-Dexec.mainClass=view.Main" for main
+
+

@@ -1,3 +1,5 @@
+package model;
+
 public class BankAccount {
     private String accName;
     private final int accNumber;
