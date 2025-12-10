@@ -49,6 +49,20 @@ public class Bank {
         }
     }
 
+    public void transfer(int accountNumberTo, int accountNumberFrom, double transferAmount){
+        BankAccount accountTo = lookUpAccounts(accountNumberTo);
+        BankAccount accountFrom = lookUpAccounts(accountNumberFrom);
+
+
+        if (accountTo != null && accountFrom != null){
+            double accountFromBalance = accountFrom.getBalance();
+            if (accountFromBalance >= transferAmount){
+                accountFrom.withdraw(transferAmount);
+                accountTo.deposit(transferAmount);
+            }
+        }
+    }
+
     public void listAllAccounts(){
         for (Map.Entry<Integer, BankAccount> entry : accountList.entrySet()) {
             System.out.println("Account Number: " + entry.getKey());
