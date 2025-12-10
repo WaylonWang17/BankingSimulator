@@ -18,7 +18,6 @@ public class BankAccount {
             accBalance += depositAmount;
             System.out.printf("Successfully deposited %.2f!\n", depositAmount);
         }
-        return;
     }
 
     public void withdraw(double withdrawAmount){
@@ -33,7 +32,6 @@ public class BankAccount {
                 System.out.println("Error, insufficient funds!\n");
             }
         }
-        return;
     }
 
     public double getBalance(){

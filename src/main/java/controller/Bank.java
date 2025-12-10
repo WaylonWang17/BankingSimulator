@@ -13,18 +13,40 @@ import model.BankAccount;
 
 
 public class Bank {
-    private Map<Integer, BankAccount> accountList; //mapping objects not types (acc no, bank account)
-    private int accountCounter;
+    private Map<Integer, BankAccount> accountList; // mapping objects not types (acc no, bank account)
+    private int accountNumber;
 
     public Bank(){
         accountList = new HashMap<Integer, BankAccount>();
-        this.accountCounter = 1;
+        this.accountNumber = 1;
     }
 
     public void createAccount(String accName, double accBalance){
-        BankAccount b = new BankAccount(accName, accountCounter, accBalance);
-        accountList.put(accountCounter, b);
-        accountCounter++;
+        BankAccount b = new BankAccount(accName, accountNumber, accBalance);
+        accountList.put(accountNumber, b);
+        accountNumber++;
+    }
+
+    public BankAccount lookUpAccounts(int accountNumber){
+        BankAccount account = accountList.get(accountNumber);
+        if (account == null){
+            System.out.println("Could not find account associated to " + accountNumber);
+        }
+        return account;
+    }
+    
+    public void deposit(int accountNumber, double depositAmount){
+        BankAccount account = lookUpAccounts(accountNumber);
+        if (account != null){
+            account.deposit(depositAmount);
+        }
+    }
+
+    public void withdraw(int accountNumber, double withdrawalAmount){
+        BankAccount account = lookUpAccounts(accountNumber);
+        if (account != null){
+            account.withdraw(withdrawalAmount);
+        }
     }
 
     public void listAllAccounts(){
