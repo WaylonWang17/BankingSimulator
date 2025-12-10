@@ -38,6 +38,10 @@ public class BankAccount {
         return accBalance;
     }
 
+    public String getName(){
+        return accName;
+    }
+
     public void displayInfo(){
         System.out.println("---------------------------------------------");
         System.out.printf("Account Name: %s\n", accName);
