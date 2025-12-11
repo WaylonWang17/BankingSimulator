@@ -1,10 +1,11 @@
 # BankingSimulator
 
-1. allow users to check their account balance
-2. make deposits and withdrawals
-3. display account info
-4. exit via a menu
-5. all data is stored in memory - no external files or db
+next steps
+1. chequing and savings account
+2. transaction history
+3. daily interest calculation for savings account
+4. authentication for logging in n out
+
 
 maven guide
 - mvn compile
