@@ -1,9 +1,9 @@
 package model;
 
 public class BankAccount {
-    private String accName;
-    private final int accNumber;
-    private double accBalance;
+    protected String accName; //protected so that subclasses can access these
+    protected final int accNumber;
+    protected double accBalance;
 
     public BankAccount(String accName, int accNumber, double accBalance){
         this.accName = accName;
